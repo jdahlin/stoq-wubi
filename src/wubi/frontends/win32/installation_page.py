@@ -160,7 +160,7 @@ class InstallationPage(Page):
         if not language and self.info.windows_language in language2lang_country.keys():
             language = self.info.windows_language
         if not language:
-            language = lang_country2language.get("en_US")
+            language = lang_country2language.get("pt_BR")
         self.language_list.set_value(language)
 
     def on_init(self):

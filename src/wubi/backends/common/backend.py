@@ -203,7 +203,7 @@ class Backend(object):
         log.debug("original_exe=%s" % original_exe)
         return original_exe
 
-    def get_locale(self, language_country, fallback="en_US"):
+    def get_locale(self, language_country, fallback="pt_BR"):
         _locale = lang_country2linux_locale.get(language_country, None)
         if not _locale:
             _locale = lang_country2linux_locale.get(fallback)
