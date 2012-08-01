@@ -137,6 +137,7 @@ class InstallationPage(Page):
         self.on_size_change()
 
     def populate_distro_list(self):
+        return
         if self.info.cd_distro:
             distros = [self.info.cd_distro.name]
         elif self.info.iso_distro:
@@ -196,11 +197,11 @@ class InstallationPage(Page):
         # populated by on_drive_change
         self.size_list.on_change = self.on_size_change
 
-        picture, label, self.distro_list = self.add_controls_block(
-            self.main, h, h*7,
-            "desktop.bmp", _("Desktop environment:"), True)
-        self.populate_distro_list()
-        self.distro_list.on_change = self.on_distro_change
+        #picture, label, self.distro_list = self.add_controls_block(
+        #    self.main, h, h*7,
+        #    "desktop.bmp", _("Desktop environment:"), True)
+        #self.populate_distro_list()
+        #self.distro_list.on_change = self.on_distro_change
 
         picture, label, self.language_list = self.add_controls_block(
             self.main, h*4 + w, h,
@@ -244,6 +245,8 @@ class InstallationPage(Page):
             "")
         self.error_label.set_text_color(255, 0, 0)
 
+        self.on_distro_change()
+
         if self.info.non_interactive:
             self.on_install()
 
@@ -259,7 +262,7 @@ class InstallationPage(Page):
         return installation_size
 
     def on_distro_change(self):
-        distro_name = str(self.distro_list.get_text())
+        distro_name = 'Stoq' #str(self.distro_list.get_text())
         self.info.distro = self.info.distros_dict.get((distro_name.lower(), self.info.arch))
         # Fall through to i386 if an amd64 version of a particular distribution
         # does not exist.
