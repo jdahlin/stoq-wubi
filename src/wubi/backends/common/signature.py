@@ -28,6 +28,7 @@ from utils import read_file
 from openpgp.sap.api import verify_str
 #explicit imports required by pylauncher
 import openpgp.sap.pkt.PublicKey
+import openpgp.sap.pkt.PublicSubkey
 import openpgp.sap.pkt.UserID
 import openpgp.sap.pkt.Trust
 
