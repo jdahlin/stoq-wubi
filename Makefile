@@ -1,6 +1,6 @@
 export SHELL = sh
-PACKAGE = wubi
-ICON = data/images/Wubi.ico
+PACKAGE = stoq-wubi
+ICON = data/images/Stoq.ico
 REVISION = $(shell git log --pretty=format:'"%h"' -n 1)
 VERSION = $(shell head -n 1 debian/changelog | sed -e "s/^$(PACKAGE) (\(.*\)).*/\1/g")
 COPYRIGHTYEAR = 2009
